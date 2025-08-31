@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router";
 import { useState, useEffect } from "react";
 import Spinner from "../components/Spinner";
+import CoinChart from "../components/CoinChart";
 
 const API_URL = import.meta.env.VITE_COIN_API_URL;
 
@@ -54,6 +55,9 @@ const CoinDetailsPage = () => {
               Market Cap : ${coin.market_data.market_cap.usd.toLocaleString()}
             </h5>
           </div>
+
+          <CoinChart coinId={coin.id} />
+
           <div className="coin-details-links">
             {coin.links.homepage[0] && (
               <p>
